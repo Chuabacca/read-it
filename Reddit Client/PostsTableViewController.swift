@@ -11,19 +11,14 @@ import UIKit
 class PostsTableViewController: UITableViewController {
     
     var subreddit: String?
-    var subredditURL: String?
     
-    struct BitcoinData: Codable {
-        let last: Double
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let subredditName = subreddit {
             title = subredditName
-            subredditURL = "https://www.reddit.com/r/\(subredditName).json"
         }
+        
         
     }
 
@@ -43,16 +38,40 @@ class PostsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    
+    
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    
+    callAPI(url: subredditURL)
+
+    func callAPI(url: String) {
+        Alamofire.request(url).responseData { response in
+            guard response.result.isSuccess else {
+                return
+            }
+            print(response.result.value!)
+            do {
+                let decoder = JSONDecoder()
+                let resp = try decoder.decode(RedditData.self, from: response.data!)
+                print("Title: \(resp.data.children[0].data.title)")
+                print("Author: \(resp.data.children[0].data.author)")
+                print("Body: \(resp.data.children[0].data.selftext)")
+            }
+            catch {
+                print("Error: \(error)")
+            }
+        }
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
