@@ -6,4 +6,8 @@
 //  Copyright © 2017 Jonathan Chua. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CustomPostCell: UITableViewCell {
+
+}
