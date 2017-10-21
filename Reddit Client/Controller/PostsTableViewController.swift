@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SafariServices
 
 class PostsTableViewController: UITableViewController {
     
@@ -54,6 +55,12 @@ class PostsTableViewController: UITableViewController {
             tableView.separatorStyle = .none
         }
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        let svc = SFSafariViewController(url: URL(string:(post.url))!)
+        self.present(svc, animated: true, completion: nil)
     }
 
     struct Response: Codable {
