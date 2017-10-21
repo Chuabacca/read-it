@@ -10,50 +10,62 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="100" id="bS7-RL-8od" customClass="CustomPostCell" customModule="Reddit_Client" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="154" id="bS7-RL-8od" customClass="CustomPostCell" customModule="Reddit_Client" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bS7-RL-8od" id="dsO-43-xaB">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="153.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLR-Ef-93b" userLabel="Title">
-                        <rect key="frame" x="8" y="8" width="359" height="15"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-qL-G67" userLabel="Post Text">
-                        <rect key="frame" x="8" y="23" width="359" height="54"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN0-ak-Voh" userLabel="Author">
-                        <rect key="frame" x="8" y="77" width="258" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments: 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-7i-W5e" userLabel="Comments">
-                        <rect key="frame" x="276" y="77" width="91" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnT-sw-veW" userLabel="Card View">
+                        <rect key="frame" x="8" y="4" width="359" height="145.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLR-Ef-93b" userLabel="Title">
+                                <rect key="frame" x="8" y="8" width="343" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN0-ak-Voh" userLabel="Author">
+                                <rect key="frame" x="8" y="122" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments: 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-7i-W5e" userLabel="Comments">
+                                <rect key="frame" x="260" y="122.5" width="91" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-qL-G67" userLabel="Post Text">
+                                <rect key="frame" x="8" y="36" width="343" height="78"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jN0-ak-Voh" firstAttribute="leading" secondItem="MnT-sw-veW" secondAttribute="leading" constant="8" id="3Ov-fl-9FB"/>
+                            <constraint firstItem="jN0-ak-Voh" firstAttribute="top" secondItem="lzE-qL-G67" secondAttribute="bottom" constant="8" id="3dz-6z-Jdc"/>
+                            <constraint firstAttribute="trailing" secondItem="lzE-qL-G67" secondAttribute="trailing" constant="8" id="6hS-4P-XA7"/>
+                            <constraint firstAttribute="trailing" secondItem="p1d-7i-W5e" secondAttribute="trailing" constant="8" id="8u5-L4-c0I"/>
+                            <constraint firstItem="QLR-Ef-93b" firstAttribute="top" secondItem="MnT-sw-veW" secondAttribute="top" constant="8" id="E6N-qt-Xog"/>
+                            <constraint firstItem="lzE-qL-G67" firstAttribute="leading" secondItem="MnT-sw-veW" secondAttribute="leading" constant="8" id="Fta-yU-Uv8"/>
+                            <constraint firstItem="QLR-Ef-93b" firstAttribute="leading" secondItem="MnT-sw-veW" secondAttribute="leading" constant="8" id="TAI-2e-qNv"/>
+                            <constraint firstItem="lzE-qL-G67" firstAttribute="top" secondItem="QLR-Ef-93b" secondAttribute="bottom" constant="13" id="TWW-Th-SPK"/>
+                            <constraint firstAttribute="bottom" secondItem="jN0-ak-Voh" secondAttribute="bottom" constant="8" id="V2u-kk-Aot"/>
+                            <constraint firstAttribute="bottom" secondItem="p1d-7i-W5e" secondAttribute="bottom" constant="8" id="Xks-po-ub6"/>
+                            <constraint firstAttribute="trailing" secondItem="QLR-Ef-93b" secondAttribute="trailing" constant="8" id="hse-do-68a"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="p1d-7i-W5e" secondAttribute="trailing" constant="8" id="3pJ-LD-Vvz"/>
-                    <constraint firstAttribute="trailing" secondItem="QLR-Ef-93b" secondAttribute="trailing" constant="8" id="BCr-vc-27s"/>
-                    <constraint firstAttribute="bottom" secondItem="p1d-7i-W5e" secondAttribute="bottom" constant="8" id="C4A-ak-t9F"/>
-                    <constraint firstAttribute="bottom" secondItem="jN0-ak-Voh" secondAttribute="bottom" constant="8" id="EUm-Bm-Wdf"/>
-                    <constraint firstItem="jN0-ak-Voh" firstAttribute="top" secondItem="lzE-qL-G67" secondAttribute="bottom" id="SJh-Jh-GtT"/>
-                    <constraint firstItem="jN0-ak-Voh" firstAttribute="leading" secondItem="dsO-43-xaB" secondAttribute="leading" constant="8" id="Uvw-ym-X6D"/>
-                    <constraint firstItem="lzE-qL-G67" firstAttribute="top" secondItem="QLR-Ef-93b" secondAttribute="bottom" id="eEl-td-zWd"/>
-                    <constraint firstAttribute="trailing" secondItem="lzE-qL-G67" secondAttribute="trailing" constant="8" id="hJh-SS-8bv"/>
-                    <constraint firstItem="p1d-7i-W5e" firstAttribute="leading" secondItem="jN0-ak-Voh" secondAttribute="trailing" constant="10" id="hnu-Ih-fuc"/>
-                    <constraint firstItem="lzE-qL-G67" firstAttribute="leading" secondItem="dsO-43-xaB" secondAttribute="leading" constant="8" id="jJ4-VB-a21"/>
-                    <constraint firstItem="QLR-Ef-93b" firstAttribute="top" secondItem="dsO-43-xaB" secondAttribute="top" constant="8" id="yPV-zk-W5f"/>
-                    <constraint firstItem="QLR-Ef-93b" firstAttribute="leading" secondItem="dsO-43-xaB" secondAttribute="leading" constant="8" id="zFi-qA-1Vn"/>
+                    <constraint firstAttribute="bottom" secondItem="MnT-sw-veW" secondAttribute="bottom" constant="4" id="5PW-gl-BVd"/>
+                    <constraint firstAttribute="trailing" secondItem="MnT-sw-veW" secondAttribute="trailing" constant="8" id="D9r-X3-imf"/>
+                    <constraint firstItem="MnT-sw-veW" firstAttribute="top" secondItem="dsO-43-xaB" secondAttribute="top" constant="4" id="ThX-Nr-ALD"/>
+                    <constraint firstItem="MnT-sw-veW" firstAttribute="leading" secondItem="dsO-43-xaB" secondAttribute="leading" constant="8" id="vzD-Nn-GFI"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -62,7 +74,7 @@
                 <outlet property="postLabel" destination="lzE-qL-G67" id="vfS-Rj-Bsn"/>
                 <outlet property="titleLabel" destination="QLR-Ef-93b" id="52G-1K-Efm"/>
             </connections>
-            <point key="canvasLocation" x="0.5" y="40"/>
+            <point key="canvasLocation" x="0.5" y="67"/>
         </tableViewCell>
     </objects>
 </document>
