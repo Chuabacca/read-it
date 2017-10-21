@@ -49,6 +49,7 @@ class PostsTableViewController: UITableViewController {
             let post = posts[indexPath.row]
             cell.titleLabel.text = post.title
             cell.authorLabel.text = post.author
+            tableView.separatorStyle = .none
         }
         return cell
     }
@@ -67,11 +68,9 @@ class PostsTableViewController: UITableViewController {
                 return
             }
             print(response.result.value!)
-            //self.redditData.apiResponse = response.data!
             do {
                 let decoder = JSONDecoder()
                 let r = try decoder.decode(Response.self, from: response.data!)
-                //print("Title: \(r.data.children[0].data.title)")
                 vc.posts = r.data.children.map { $0.data }
                 print(vc.posts)
             }
