@@ -28,17 +28,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN0-ak-Voh" userLabel="Author">
-                        <rect key="frame" x="8" y="77" width="100" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="100" id="EYc-ng-fQF"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN0-ak-Voh" userLabel="Author">
+                        <rect key="frame" x="8" y="77" width="258" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-7i-W5e" userLabel="URL">
-                        <rect key="frame" x="118" y="77" width="249" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments: 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-7i-W5e" userLabel="Comments">
+                        <rect key="frame" x="276" y="77" width="91" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -61,9 +58,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="authorLabel" destination="jN0-ak-Voh" id="gzE-cL-hMw"/>
+                <outlet property="commentsLabel" destination="p1d-7i-W5e" id="yym-w6-12V"/>
                 <outlet property="postLabel" destination="lzE-qL-G67" id="vfS-Rj-Bsn"/>
                 <outlet property="titleLabel" destination="QLR-Ef-93b" id="52G-1K-Efm"/>
-                <outlet property="urlLabel" destination="p1d-7i-W5e" id="Nxw-LD-NGf"/>
             </connections>
             <point key="canvasLocation" x="0.5" y="40"/>
         </tableViewCell>

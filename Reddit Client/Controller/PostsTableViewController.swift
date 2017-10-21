@@ -48,7 +48,9 @@ class PostsTableViewController: UITableViewController {
         if let cell = cell as? CustomPostCell {
             let post = posts[indexPath.row]
             cell.titleLabel.text = post.title
-            cell.authorLabel.text = post.author
+            cell.authorLabel.text = "Author: \(post.author)"
+            cell.postLabel.text = post.selftext
+            cell.commentsLabel.text = "Comments: \(String(post.comments))"
             tableView.separatorStyle = .none
         }
         return cell

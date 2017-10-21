@@ -11,39 +11,15 @@ import Foundation
 class RedditPost: Codable {
     var title: String
     var author: String
-}
-
-/*
-
- C
-
- c
- d = c
- > d === c
-
- S
-
- s = "foo"
- t = s
- > t !== s
- t += "bar"
- > "foobar"
- s
- > "foo"
- */
-
-/*
-class RedditDataModel {
-
-    var apiResponse: Data?
-    var redditData
-
-    func decode() {
-        let decoder = JSONDecoder()
-
-
+    var selftext: String
+    var url: String
+    var comments: Int
+    enum CodingKeys: String, CodingKey {
+        case title
+        case author
+        case selftext
+        case url
+        case comments = "num_comments"
     }
-
 }
- */
 
