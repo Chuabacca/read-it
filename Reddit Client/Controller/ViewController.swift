@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         {
             subredditURL = "https://www.reddit.com/r/\(subredditInput).json"
             postsViewController.subredditURL = subredditURL
+            postsViewController.subredditInput = subredditInput
         }
     }
 

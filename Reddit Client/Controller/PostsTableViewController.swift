@@ -12,6 +12,7 @@ import Alamofire
 class PostsTableViewController: UITableViewController {
     
     var subredditURL: String?
+    var subredditInput: String?
     // let redditData = RedditDataModel()
 
     var posts = [RedditPost]() {
@@ -26,7 +27,7 @@ class PostsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CustomPostCell", bundle: nil), forCellReuseIdentifier: "postCell")
 
         if let subredditURL = subredditURL {
-            title = subredditURL
+            title = subredditInput
             callAPI(url: subredditURL)
         }
     }
