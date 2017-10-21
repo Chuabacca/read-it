@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import Alamofire
 
 class PostsTableViewController: UITableViewController {
     
-    var subreddit: String?
-    
+    var subredditURL: String?
+    // let redditData = RedditDataModel()
+
+    var posts = [RedditPost]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let subredditName = subreddit {
-            title = subredditName
+        tableView.register(UINib(nibName: "CustomPostCell", bundle: nil), forCellReuseIdentifier: "postCell")
+
+        if let subredditURL = subredditURL {
+            title = subredditURL
+            callAPI(url: subredditURL)
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,42 +38,41 @@ class PostsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
-    
-    
-    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
+        if let cell = cell as? CustomPostCell {
+            let post = posts[indexPath.row]
+            cell.titleLabel.text = post.title
+            cell.authorLabel.text = post.author
+        }
         return cell
     }
-    
-    
-    callAPI(url: subredditURL)
+
+    struct Response: Codable {
+        struct Data: Codable {
+            struct Child: Codable { let data: RedditPost }
+            let children: [Child]
+        }
+        let data: Data
+    }
 
     func callAPI(url: String) {
-        Alamofire.request(url).responseData { response in
-            guard response.result.isSuccess else {
+        Alamofire.request(url).responseData { [weak self] response in
+            guard response.result.isSuccess, let vc = self else {
                 return
             }
             print(response.result.value!)
+            //self.redditData.apiResponse = response.data!
             do {
                 let decoder = JSONDecoder()
-                let resp = try decoder.decode(RedditData.self, from: response.data!)
-                print("Title: \(resp.data.children[0].data.title)")
-                print("Author: \(resp.data.children[0].data.author)")
-                print("Body: \(resp.data.children[0].data.selftext)")
+                let r = try decoder.decode(Response.self, from: response.data!)
+                //print("Title: \(r.data.children[0].data.title)")
+                vc.posts = r.data.children.map { $0.data }
+                print(vc.posts)
             }
             catch {
                 print("Error: \(error)")

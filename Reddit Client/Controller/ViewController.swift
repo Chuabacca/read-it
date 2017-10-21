@@ -18,8 +18,7 @@ import Alamofire
 class ViewController: UIViewController {
     
     var subredditURL: String = ""
-    
-    
+
     @IBOutlet weak var subredditField: UITextField!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var errorMessageLabel: UILabel!
@@ -48,13 +47,15 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let postsViewController = segue.destination as? PostsTableViewController {
-            postsViewController.subreddit = subredditField.text
-        }
-        if let subredditInput = subredditField.text {
+        super.prepare(for: segue, sender: sender)
+        if
+            let postsViewController = segue.destination as? PostsTableViewController,
+            let subredditInput = subredditField.text
+        {
             subredditURL = "https://www.reddit.com/r/\(subredditInput).json"
+            postsViewController.subredditURL = subredditURL
         }
     }
-    
+
 }
 

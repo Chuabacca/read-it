@@ -22,7 +22,7 @@
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-qL-G67" userLabel="Post Text" customClass="custom">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-qL-G67" userLabel="Post Text">
                         <rect key="frame" x="8" y="23" width="359" height="54"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
@@ -59,6 +59,12 @@
                     <constraint firstItem="QLR-Ef-93b" firstAttribute="leading" secondItem="dsO-43-xaB" secondAttribute="leading" constant="8" id="zFi-qA-1Vn"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="authorLabel" destination="jN0-ak-Voh" id="gzE-cL-hMw"/>
+                <outlet property="postLabel" destination="lzE-qL-G67" id="vfS-Rj-Bsn"/>
+                <outlet property="titleLabel" destination="QLR-Ef-93b" id="52G-1K-Efm"/>
+                <outlet property="urlLabel" destination="p1d-7i-W5e" id="Nxw-LD-NGf"/>
+            </connections>
             <point key="canvasLocation" x="0.5" y="40"/>
         </tableViewCell>
     </objects>

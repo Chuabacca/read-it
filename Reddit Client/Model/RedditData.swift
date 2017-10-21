@@ -8,21 +8,42 @@
 
 import Foundation
 
-struct RedditData: Codable {
-    struct Data: Codable {
-        struct Children: Codable {
-            struct PostData: Codable {
-                let selftext: String
-                let title: String
-                let url: String
-                let author: String
-            }
-            
-            let data: PostData
-        }
-        
-        let children: [Children]
-    }
-    
-    let data: Data
+class RedditPost: Codable {
+    var title: String
+    var author: String
 }
+
+/*
+
+ C
+
+ c
+ d = c
+ > d === c
+
+ S
+
+ s = "foo"
+ t = s
+ > t !== s
+ t += "bar"
+ > "foobar"
+ s
+ > "foo"
+ */
+
+/*
+class RedditDataModel {
+
+    var apiResponse: Data?
+    var redditData
+
+    func decode() {
+        let decoder = JSONDecoder()
+
+
+    }
+
+}
+ */
+
